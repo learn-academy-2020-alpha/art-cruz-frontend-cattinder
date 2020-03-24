@@ -62,6 +62,8 @@ class CatNew extends Component {
                   </Input>
                 </p>
                 <p>
+                  <Label for="catimg">Cat Image:</Label>
+                  <Input type="text" id="catimg" placeholder="Enter IMG url" />
                   <Label for="catinfo">Cat Interests:</Label>
                   <Input
                     type="textarea"
