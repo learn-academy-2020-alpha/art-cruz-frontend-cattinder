@@ -1,8 +1,41 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
-import { Form, Button, Input, Label, Control, Group } from "reactstrap";
+import { Form, Button, Input, Label } from "reactstrap";
 
 class CatNew extends Component {
+  constructor() {
+    super();
+    this.state = {
+      newCat: {
+        name: "",
+        age: "",
+        image: "",
+        interests: ""
+      }
+    };
+  }
+
+  catNameUpdate(name) {
+    let updatedCat = this.state.newCat;
+    updatedCat.name = name;
+    this.setState({ newCat: updatedCat });
+  }
+  catInterestUpdate(interest) {
+    let updatedI = this.state.newCat;
+    updatedI.interests = interest;
+    this.setState({ newCat: updatedI });
+  }
+  catImageUpdate(img) {
+    let updatedCat = this.state.newCat;
+    updatedCat.image = img;
+    this.setState({ newCat: updatedCat });
+  }
+  catAgeUpdate(age) {
+    let updatedCat = this.state.newCat;
+    updatedCat.age = age;
+    this.setState({ newCat: updatedCat });
+  }
+
   render() {
     return (
       <div>
@@ -28,7 +61,10 @@ class CatNew extends Component {
                     type="text"
                     id="catname"
                     placeholder="Cat Name"
-                    style={{ width: "20vw" }}
+                    onChange={e => {
+                      let name = e.target.value;
+                      this.catNameUpdate(name);
+                    }}
                   />
                 </p>
                 <p>
@@ -37,8 +73,12 @@ class CatNew extends Component {
                     type="select"
                     id="catage"
                     placeholder="Cat Name"
-                    style={{ width: "20vw" }}
+                    onChange={e => {
+                      let age = e.target.value;
+                      this.catAgeUpdate(age);
+                    }}
                   >
+                    <option />
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -63,19 +103,36 @@ class CatNew extends Component {
                 </p>
                 <p>
                   <Label for="catimg">Cat Image:</Label>
-                  <Input type="text" id="catimg" placeholder="Enter IMG url" />
+                  <Input
+                    type="text"
+                    id="catimg"
+                    placeholder="Enter IMG url"
+                    onChange={e => {
+                      let img = e.target.value;
+                      this.catImageUpdate(img);
+                    }}
+                  />
                   <Label for="catinfo">Cat Interests:</Label>
                   <Input
                     type="textarea"
                     id="catinfo"
-                    style={{ width: "20vw", height: "15vh" }}
+                    onChange={e => {
+                      let interest = e.target.value;
+                      this.catInterestUpdate(interest);
+                    }}
                   />
                 </p>
               </Form>
             </Col>
           </Row>
           <Row style={{ display: "flex", justifyContent: "center" }}>
-            <Button>Submit</Button>
+            <Button
+              onClick={() => {
+                console.log(this.state.newCat);
+              }}
+            >
+              Submit
+            </Button>
           </Row>
         </Container>
       </div>

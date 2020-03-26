@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Row, Col, Button } from "reactstrap";
-import "./App.css";
+import "./styles.css";
 import cats from "./cats";
 
 import Header from "./components/Header";
 import CatIndex from "./pages/CatIndex";
 import CatNew from "./pages/CatNew";
+import NotFound from "./pages/NotFound";
 
 class App extends Component {
   constructor() {
@@ -28,7 +29,14 @@ class App extends Component {
               justifyContent: "center"
             }}
           >
-            <Col style={{ color: "white" }} sm={2}>
+            <Col
+              style={{
+                color: "white",
+                display: "flex",
+                justifyContent: "center"
+              }}
+              sm={1}
+            >
               <Link to="/">
                 <Button
                   style={{
@@ -42,7 +50,14 @@ class App extends Component {
                 </Button>
               </Link>
             </Col>
-            <Col style={{ color: "white" }} sm={2}>
+            <Col
+              style={{
+                color: "white",
+                display: "flex",
+                justifyContent: "center"
+              }}
+              sm={1}
+            >
               <Link to="/cat/:id">
                 <Button
                   style={{
@@ -65,6 +80,7 @@ class App extends Component {
               path="/"
               render={props => <CatIndex cats={this.state.allCats} />}
             />
+            <Route component={NotFound} />
           </Switch>
         </Router>
       </React.Fragment>
