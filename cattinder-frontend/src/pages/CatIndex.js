@@ -10,6 +10,7 @@ import {
   Col
 } from "reactstrap";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
+import meow from '../assets/Meow.mp3'
 
 class CatIndex extends Component {
   checkI(i) {
@@ -20,6 +21,12 @@ class CatIndex extends Component {
     }
     return i;
   }
+  
+  playAudio() {
+    const audioEl = document.getElementsByClassName("audio-element")[0]
+    audioEl.volume = 0.1
+    audioEl.play()
+  } 
 
   render() {
     let map = this.props.cats.map((cat, i) => {
@@ -41,8 +48,12 @@ class CatIndex extends Component {
                     alt="Card image cap"
                     onClick={() => {
                       this.parallax.scrollTo(this.checkI(i));
+                      this.playAudio();
                     }}
                   />
+                  <audio className="audio-element">
+                    <source src={meow}></source>
+                  </audio> 
                   <CardBody>
                     <CardTitle
                       style={{
