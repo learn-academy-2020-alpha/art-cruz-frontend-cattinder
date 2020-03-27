@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
+import icon from '../assets/cattinder.png'
 
 class Header extends Component {
   render() {
@@ -10,21 +11,20 @@ class Header extends Component {
             <div
               style={{
                 height: "20vh",
-                backgroundColor: "rgba(0,0,0,0.3)"
+                backgroundColor: "rgba(0,0,0,0.3)",
+                display:"flex",
+                justifyContent:"center"
               }}
             >
-              <h1
+              <img
                 style={{
                   textAlign: "center",
                   color: "white",
-                  fontSize: "50px",
-                  fontFamily: "Amatic SC",
-                  position: "relative",
+                  width:"8vw",
+                  height:"20vh",
                   marginTop: "1px"
                 }}
-              >
-                Cat Tinder
-              </h1>
+                src={icon}/>
             </div>
           </Col>
         </Row>

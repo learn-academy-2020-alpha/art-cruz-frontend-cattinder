@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Row, Col, Button } from "reactstrap";
 import "./App.css";
 import cats from "./cats";
+import icon from './assets/cattinder.png'
 
 import Header from "./components/Header";
 import CatIndex from "./pages/CatIndex";
