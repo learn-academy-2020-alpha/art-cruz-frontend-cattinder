@@ -25,7 +25,7 @@ class App extends Component {
   getCats = () => {
     // Making a fetch request to the url of our Rails app
     // fetch returns a promise
-    fetch("http://3.135.226.175:8080/cats")
+    fetch("http://localhost:3000/cats")
       .then(response => {
         //Make sure we get a successful response back
         if (response.status === 200) {
@@ -42,7 +42,7 @@ class App extends Component {
   
   
   createCat = (newcat) => {
-    return fetch("http://3.135.226.175:8080/cats", {
+    return fetch("http://localhost:3000/cats", {
       // converting an object to a string
     	body: JSON.stringify(newcat),
       // specify the info being sent in JSON and the info returning should be JSON

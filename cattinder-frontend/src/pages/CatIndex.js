@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import {
   Card,
   CardImg,
@@ -29,9 +30,11 @@ class CatIndex extends Component {
   } 
 
   render() {
+    
     let map = this.props.cats.map((cat, i) => {
+  
       return (
-        <ParallaxLayer offset={i} speed={0.5}>
+        <ParallaxLayer offset={i} speed={0.5} className="index-bg">
           <div key={i}>
             <Row>
               <Col
@@ -81,24 +84,26 @@ class CatIndex extends Component {
                 </Card>
               </Col>
             </Row>
-            <br />
+           
           </div>
         </ParallaxLayer>
       );
     });
     return (
-      <>
+      <div className="index-h">
         <h1
           style={{
             display: "flex",
             justifyContent: "center",
-            fontFamily: "Amatic SC"
+            fontFamily: "Amatic SC",
+            color:"#faa725",
+            fontWeight:"bold"
           }}
         >
-          {" "}
           Find the cat of your dreams!
         </h1>
         <Parallax
+          className="index-bg"
           pages={this.props.cats.length}
           scrolling={false}
           horizontal
@@ -106,7 +111,7 @@ class CatIndex extends Component {
         >
           {map}
         </Parallax>
-      </>
+      </div>
     );
   }
 }
