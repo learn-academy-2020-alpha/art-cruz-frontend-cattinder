@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Form, Button, Input, Label } from "reactstrap";
+import { Link, Redirect } from 'react-router-dom'
 
 class CatNew extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      success: false,
       newCat: {
         name: "",
         age: "",
@@ -13,6 +15,15 @@ class CatNew extends Component {
         interests: ""
       }
     };
+  }
+  handleSubmit = (event) => {
+    // keeps React from refreshing the page unnecessarily
+    event.preventDefault()
+    // a function call being passed from App.js
+    this.props.handleSubmit(this.state.newCat)
+    this.setState({
+      success: true
+    })
   }
 
   catNameUpdate(name) {
@@ -126,13 +137,16 @@ class CatNew extends Component {
             </Col>
           </Row>
           <Row style={{ display: "flex", justifyContent: "center" }}>
-            <Button
-              onClick={() => {
-                console.log(this.state.newCat);
-              }}
-            >
-              Submit
-            </Button>
+            <Link to="/catindex">
+              <Button
+                name="submit"
+                id="submit"
+                onClick={ this.handleSubmit }
+              >
+                Submit
+              </Button>
+              { this.state.success && <Redirect to="/"/> }
+            </Link>
           </Row>
         </Container>
       </div>
