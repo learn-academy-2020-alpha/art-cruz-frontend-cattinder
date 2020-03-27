@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Row, Col, Button } from "reactstrap";
 import "./App.css";
 import cats from "./cats";
-import icon from './assets/cattinder.png'
 
 import Header from "./components/Header";
 import CatIndex from "./pages/CatIndex";
@@ -68,7 +67,7 @@ class App extends Component {
         <Router>
           <Row
             style={{
-              backgroundColor: "rgb(55,55,55)",
+              backgroundColor: "rgb(13.7,12.2,12.5)",
               display: "flex",
               justifyContent: "center"
             }}
@@ -85,7 +84,7 @@ class App extends Component {
                 <Button
                   style={{
                     fontFamily: "Poppins",
-                    backgroundColor: "rgb(55,55,55)",
+                    backgroundColor: "rgb(13.7,12.2,12.5)",
                     borderColor: "white",
                     borderRadius: "0px"
                   }}
@@ -106,7 +105,7 @@ class App extends Component {
                 <Button
                   style={{
                     fontFamily: "Poppins",
-                    backgroundColor: "rgb(55,55,55)",
+                    backgroundColor: "rgb(13.7,12.2,12.5)",
                     borderColor: "white",
                     borderRadius: "0px"
                   }}

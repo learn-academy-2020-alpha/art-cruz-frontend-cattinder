@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
 import icon from '../assets/cattinder.png'
+import icon2 from '../assets/cattinder2.png'
 
 class Header extends Component {
   render() {
@@ -11,7 +12,7 @@ class Header extends Component {
             <div
               style={{
                 height: "20vh",
-                backgroundColor: "rgba(0,0,0,0.3)",
+                backgroundColor: "#f0768b",
                 display:"flex",
                 justifyContent:"center"
               }}
@@ -24,7 +25,7 @@ class Header extends Component {
                   height:"20vh",
                   marginTop: "1px"
                 }}
-                src={icon}/>
+                src={icon2}/>
             </div>
           </Col>
         </Row>

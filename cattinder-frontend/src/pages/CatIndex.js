@@ -40,7 +40,7 @@ class CatIndex extends Component {
                   justifyContent: "center"
                 }}
               >
-                <Card style={{ width: "60vh" }}>
+                <Card style={{ width: "60vh", boxShadow:"0px 0px 10px", marginTop:"3vh" }}>
                   <CardImg
                     top
                     width="100%"
